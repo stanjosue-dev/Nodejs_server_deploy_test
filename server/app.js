@@ -4,8 +4,11 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-    origin: 'http://127.0.0.1:5500',
-    optionSuccessStatus: 200,
+    origin: [
+        'http://127.0.0.1:5500',
+        'https://stanjosue-dev.github.io/node_deployment_test_Project/'
+    ],
+    optionsSuccessStatus: 200,
 }));
 
 
@@ -19,4 +22,9 @@ app.get('/api', (req, res) => {
           
 })
 
-app.listen(process.env.PORT);
+
+
+const PORT = process.env.PORT || 3000 ;
+app.listen(PORT, ()=>{
+    console.log(`serveur démarré sur le port : ${PORT}`)
+});
