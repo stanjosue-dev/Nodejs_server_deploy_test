@@ -6,7 +6,7 @@ const app = express();
 app.use(cors({
     origin: [
         'http://127.0.0.1:5500',
-        'https://stanjosue-dev.github.io/node_deployment_test_Project/'
+        'https://stanjosue-dev.github.io'
     ],
     optionsSuccessStatus: 200,
 }));
