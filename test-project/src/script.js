@@ -1,4 +1,7 @@
+const p = document.getElementById('p');
+p.textContent = 'Please wait server is starting...';
+
 fetch('https://node-deployment-test-project.onrender.com/api')
 .then(res => res.text())
-.then(data => document.getElementById('p').textContent = data)
-.catch(err => {document.getElementById('p').textContent = `erreur chargement : ${err}`})
+.then(data => p.textContent = data)
+.catch(err => {p.textContent = `erreur chargement : ${err}`})
